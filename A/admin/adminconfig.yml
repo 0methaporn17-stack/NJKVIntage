@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "static/uploads"
+
+collections:
+  - name: "products"
+    label: "สินค้า"
+    folder: "content/products"
+    create: true
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "ชื่อสินค้า", name: "name", widget: "string" }
+      - { label: "ราคา", name: "price", widget: "number" }
+      - { label: "หมวดหมู่", name: "category", widget: "select", options: ["เสื้อ", "กางเกง", "แจ็คเก็ต", "อื่นๆ"] }
+      - { label: "ลิงก์รูปสินค้า", name: "image_url", widget: "string", hint: "วางลิงก์รูปที่นี่" }
+      - { label: "รายละเอียดสินค้า", name: "description", widget: "text" }
